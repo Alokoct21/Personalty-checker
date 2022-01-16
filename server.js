@@ -3,14 +3,17 @@ const path = require('path');
 
 const app = express();
 
-app.use(express.static(path.join(__dirname,'public')));
+const filepath = path.join(__dirname,'public'); 
+
+app.use(express.static(filepath));
 
 const port  = process.env.PORT || 7000;
 
 
 
 app.get('/index.html',(req,res)=>{
-    $(document).ready(function(){
+   res.send(filepath) ;
+   $(document).ready(function(){
         $('button').click(function(){
             const name = $('#nameid').val(); 
             $('.imgchange').attr('src',`https://joeschmoe.io/api/v1/${name}`);
