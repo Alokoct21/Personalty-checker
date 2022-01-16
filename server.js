@@ -9,7 +9,7 @@ const port  = process.env.PORT || 7000;
 
 
 
-app.get('/',(req,res)=>{
+app.get('/index.html',(req,res)=>{
     $(document).ready(function(){
         $('button').click(function(){
             const name = $('#nameid').val(); 
